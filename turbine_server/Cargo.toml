@@ -1,0 +1,14 @@
+[package]
+name = "turbine_server"
+edition = { workspace = true }
+
+[dependencies]
+tokio = { workspace = true, features = ["full"] }
+bevy = { workspace = true }
+profiling = { workspace = true }
+
+[features]
+profile-with-puffin = ["profiling/profile-with-puffin"]
+profile-with-tracy = ["profiling/profile-with-tracy"]
+default = ["profile-with-tracy"]
+

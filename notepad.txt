@@ -1,0 +1,10 @@
+database: https://docs.rs/heed/latest/heed/index.html
+
+perf book: https://nnethercote.github.io/perf-book/introduction.html
+optimisation guide: https://gist.github.com/jFransham/369a86eff00e5f280ed25121454acec1#number-one-optimization-tip-dont
+
+minecraft protocol: https://minecraft.wiki/w/Minecraft_Wiki:Projects/wiki.vg_merge/Protocol
+starlight technical details: https://github.com/PaperMC/Starlight/blob/fabric/TECHNICAL_DETAILS.md
+
+ecs examples: https://github.com/bevyengine/bevy/blob/v0.15.0/examples/ecs/ecs_guide.rs
+ecs book (unofficial - often outdated): https://bevy-cheatbook.github.io/programming/ec.html

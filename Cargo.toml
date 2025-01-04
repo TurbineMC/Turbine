@@ -1,0 +1,33 @@
+[workspace]
+members = [
+    "turbine_server"
+]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+version = "0.1.0"
+
+[profile.release]
+opt-level = "s"
+lto = "fat"
+codegen-units = 1
+#overflow-checks = false # potential performance improvement in future
+panic = "abort"
+strip = "symbols"
+
+[profile.dev]
+opt-level = 1
+
+[profile.bench]
+opt-level = 3
+debug = true
+lto = "thin"
+codegen-units = 1
+
+[workspace.dependencies]
+criterion = "0.5.1"
+profiling = "1.0.16"
+bevy = "0.15.0"
+tokio = "1.42.0"
+

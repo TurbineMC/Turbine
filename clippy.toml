@@ -1,0 +1,4 @@
+# Set maximum allowed function length
+too-many-lines-threshold = 70
+# Set maximum allowed cognitive complexity (nesting, if statements, loops, matches, breaks/continues)
+cognitive-complexity-threshold = 30
