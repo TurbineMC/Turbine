@@ -1,0 +1,32 @@
+#if you use lld or mold, you should install it as seen in: https://bevyengine.org/learn/quick-start/getting-started/setup/#compile-with-performance-optimizations
+#under alternative linkers
+
+#MacOS doesnt need one as its default compiler is comparable to mold
+# Linux
+#[target.x86_64-unknown-linux-gnu]
+#linker = "clang"
+#rustflags = ["-C", "link-arg=-fuse-ld=lld"]
+
+# alternative Linux, up to 5x faster than the above but may have stability issues
+#[target.x86_64-unknown-linux-gnu]
+#linker = "clang"
+#rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
+
+# Windows
+#[target.x86_64-pc-windows-msvc]
+#linker = "rust-lld.exe"
+
+# you can enable cranelift for faster dev compiles
+
+# linux: run - rustup component add rustc-codegen-cranelift-preview --toolchain nightly
+# windows: get the precompiled binary by following the guide here:
+#https://github.com/rust-lang/rustc_codegen_cranelift?tab=readme-ov-file#download-using-rustup
+# then uncomment the below features
+#[unstable]
+#codegen-backend = true
+
+#[profile.dev]
+#codegen-backend = "cranelift"
+
+#[profile.dev.package."*"]
+#codegen-backend = "llvm"

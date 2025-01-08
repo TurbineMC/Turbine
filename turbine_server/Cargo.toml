@@ -6,9 +6,13 @@ edition = { workspace = true }
 tokio = { workspace = true, features = ["full"] }
 bevy = { workspace = true }
 profiling = { workspace = true }
+env_logger = { workspace = true }
+
+[dev-dependencies]
+bevy = { workspace = true , features = ["dynamic_linking"] }
 
 [features]
 profile-with-puffin = ["profiling/profile-with-puffin"]
-profile-with-tracy = ["profiling/profile-with-tracy"]
-default = ["profile-with-tracy"]
+#profile-with-tracy = ["profiling/profile-with-tracy"] # broken for now I cba to look into it
+default = ["profile-with-puffin"]
 

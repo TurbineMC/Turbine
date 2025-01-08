@@ -1,9 +1,12 @@
+use bevy::log;
 use bevy::prelude::*;
 #[derive(Resource)]
 struct RuntimeResource { // a wrapper as we cant derive on 3rd party stuff
     runtime: tokio::runtime::Runtime,
 }
 fn main() {
+    env_logger::init;
+
     App::new()
         .add_plugins(MinimalPlugins)
         .insert_resource(RuntimeResource {
@@ -17,7 +20,11 @@ fn main() {
 }
 
 #[profiling::function]
-fn start_networking(mut commands: Commands, runtime: Res<RuntimeResource>) {}
+fn start_networking(mut commands: Commands, runtime: Res<RuntimeResource>) {
+    error!("not finished")
+}
 
 #[profiling::function]
-fn process_networking(runtime: Res<RuntimeResource>) {}
+fn process_networking(runtime: Res<RuntimeResource>) {
+    error!("not finished")
+}
